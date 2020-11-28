@@ -3,14 +3,15 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import { BrowserRouter, Route, Link } from "react-router-dom";
-//import { Homepage } from './features/homepage/Homepage';
+import  Homepage  from './features/homepage/Homepage';
+import Game from './features/game/Game';
 
 function App() {
   return (
     <div className="router-wrapper">
       <BrowserRouter>
         <switch>
-          <Route exact path='/' component={Counter}/>
+          <Route exact path='/' component={Homepage}/>
           <Route exact path='/game' component={Counter}/>
         </switch>
             <nav>
