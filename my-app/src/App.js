@@ -16,7 +16,7 @@ function App() {
         </switch>
             <nav>
         <Link className="nav-item" to='/'>Home</Link>
-        <Link className="nav-item" to='/game'>Game</Link>
+        <Link className="nav-item" to='/baking-game'>Game</Link>
       </nav>
       </BrowserRouter>
     </div>

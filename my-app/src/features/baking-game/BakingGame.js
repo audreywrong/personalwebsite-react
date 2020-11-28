@@ -2,9 +2,7 @@ import React from 'react';
 import './BakingGame.css';
 
 function BakingGame() {
-    return (
-    <button>Let's Bake!</button>
-    );
+    return <button>Let's Bake!</button>;
   }
 
 
