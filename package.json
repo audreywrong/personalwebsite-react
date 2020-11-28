@@ -1,0 +1,22 @@
+{
+  "name": "personalwebsite-react",
+  "version": "1.0.0",
+  "description": "Personal portfolio webiste",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/audreywrong/personalwebsite-react.git"
+  },
+  "author": "Audrey Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/audreywrong/personalwebsite-react/issues"
+  },
+  "homepage": "https://github.com/audreywrong/personalwebsite-react#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0"
+  }
+}
