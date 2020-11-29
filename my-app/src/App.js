@@ -14,10 +14,10 @@ function App() {
           <Route exact path='/' component={Homepage}/>
           <Route exact path='/baking-game' component={BakingGame}/>
         </switch>
-            <nav>
-        <Link className="nav-item" to='/'>Home</Link>
-        <Link className="nav-item" to='/baking-game'>Game</Link>
-      </nav>
+        <nav>
+          <Link className="nav-item" to='/'>Home</Link>
+          <Link className="nav-item" to='/baking-game'>Game</Link>
+        </nav>
       </BrowserRouter>
     </div>
   );

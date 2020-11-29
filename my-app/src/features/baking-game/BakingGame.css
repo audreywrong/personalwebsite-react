@@ -1,9 +1,10 @@
 .App-loading-pic {
     animation: App-logo-float infinite 3s ease-in-out;
     display: block;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 20%;
 }
 
 button {

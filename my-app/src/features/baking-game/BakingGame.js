@@ -1,12 +1,13 @@
-import React from 'react';
+import {React, useState} from 'react';
 import './BakingGame.css';
 import breadLoadingScreen from '../../bread-loading-screen.png';
 
 function BakingGame() {
-    return (
+  const [nextButtonText, setNextButtonText] = useState(`Let's Bake`);  
+  return (
       <>
       <img src={breadLoadingScreen} className="App-loading-pic" alt="loading" />
-      <button>Let's Bake!</button>
+      <button onClick={() => setNextButtonText(`Knead on to step 2!`)}>{nextButtonText}</button>
       </>
     )
   }
