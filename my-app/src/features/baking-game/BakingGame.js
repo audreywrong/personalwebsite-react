@@ -10,14 +10,17 @@ import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
 import burntBread from '../../images/burnt-bread.png';
-import steamyBread from '../../images/steamy-bread.jpg';
 
 function BakingGame() {
   const [currentStepNumber, setCurrentStepNumber] = useState(0);
   const currentStepRef = useRef(steps[0]);
 
   useEffect(() => {
-    currentStepRef.current = steps[currentStepNumber + 1];
+    if (currentStepNumber < 8) {
+      currentStepRef.current = steps[currentStepNumber + 1];
+    } else {
+      setCurrentStepNumber(-1);
+    }
   }, [currentStepNumber]);
 
   function handleClick() {
@@ -47,7 +50,7 @@ const steps = [
   {stepNumber: 5, buttonText: `Time to take a little nap!`, image: rising, imgClass: 'still-image'},
   {stepNumber: 6, buttonText: `Bake this!`, image: resting, imgClass: 'still-image'},
   {stepNumber: 7, buttonText: `Let's get this bread!`, image: baking, imgClass: 'still-image'},
-  {stepNumber: 8, image: freshLoaf, imgClass: 'floating-image'},
+  {stepNumber: 8, buttonText: `You win! Want to bake again?`, image: freshLoaf, imgClass: 'floating-image'},
 ];
 
 export default BakingGame;
