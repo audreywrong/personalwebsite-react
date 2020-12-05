@@ -29,7 +29,7 @@ function BakingGame() {
 
   return (
     <>
-      <img src={currentStepRef.current.image} className={currentStepRef.current.imgClass} alt="logo" />
+      <div className="image-wrapper"><img src={currentStepRef.current.image} className={currentStepRef.current.imgClass} alt="logo" /></div>
       <button onClick={handleClick}>{currentStepRef.current.buttonText}</button>
     </>
   );
