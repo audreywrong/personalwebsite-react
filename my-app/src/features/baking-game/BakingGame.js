@@ -1,4 +1,4 @@
-import {React, useEffect, useRef, useState, Component} from 'react';
+import {React, useState, Component} from 'react';
 import './BakingGame.css';
 import breadLoadingScreen from '../../images/bread-loading-screen.png';
 import recipe from '../../images/recipe.png';
@@ -9,40 +9,46 @@ import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
-import burntBread from '../../images/burnt-bread.png';
 
 function BakingGame() {
-  const [currentStepNumber, setCurrentStepNumber] = useState(0);
+  const [currentStep, setCurrentStep] = useState(steps[0]);
   const [bakeryName, setBakeryName] = useState('');
-  const currentStepRef = useRef(steps[0]);
-
-  useEffect(() => {
-    if (currentStepNumber < 8) {
-      currentStepRef.current = steps[currentStepNumber + 1];
-    } else {
-      setCurrentStepNumber(-1);
-    }
-  }, [currentStepNumber]);
 
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
   }
 
   function handleClick() {
-    setCurrentStepNumber(currentStepNumber + 1);
+    if (currentStep.stepNumber < 8) {
+      setCurrentStep(steps[currentStep.stepNumber + 1]);
+    } else {
+      setCurrentStep(steps[0]);
+    }
+  }
+
+  function handleClickDecrement() {
+    setCurrentStep(steps[currentStep.stepNumber - 1]);
   }
 
   return (
     <>
       {(() => {
-        debugger;
         return bakeryName && <h1>{bakeryName}</h1>;
       })()}
       <div className="image-wrapper">
-        <img src={currentStepRef.current.image} className={currentStepRef.current.imgClass} alt="logo" />
+        <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
       </div>
-      <NameForm handleBakeryNameForm={handleBakeryNameForm}></NameForm>
-      <button onClick={handleClick}>{currentStepRef.current.buttonText}</button>
+      <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
+      {(() => {
+        return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
+      })()}
+      {(() => {
+        return (
+          bakeryName &&
+          currentStep.stepNumber >= 1 &&
+          currentStep.stepNumber < 8 && <button onClick={handleClickDecrement}>IF I COULD TURN BACK TIME...</button>
+        );
+      })()}
     </>
   );
 }
@@ -74,7 +80,6 @@ class NameForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    debugger;
   }
 
   handleChange(event) {
@@ -82,13 +87,13 @@ class NameForm extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    debugger;
     event.preventDefault();
     this.props.handleBakeryNameForm(this.state.value);
   }
 
   render() {
+    if (!this.props.show) return <></>;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
