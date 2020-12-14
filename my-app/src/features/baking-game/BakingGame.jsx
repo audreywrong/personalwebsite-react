@@ -9,6 +9,8 @@ import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
+import BackButton from './back-button/BackButton';
+
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
@@ -42,13 +44,7 @@ function BakingGame() {
       {(() => {
         return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
       })()}
-      {(() => {
-        return (
-          bakeryName &&
-          currentStep.stepNumber >= 1 &&
-          currentStep.stepNumber < 8 && <button onClick={handleClickDecrement}>IF I COULD TURN BACK TIME...</button>
-        );
-      })()}
+      <BackButton {...{bakeryName:bakeryName, currentStep:currentStep, handleClickDecrement:handleClickDecrement}}></BackButton>
     </>
   );
 }
