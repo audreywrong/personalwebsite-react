@@ -10,6 +10,7 @@ import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
 import BackButton from './back-button/BackButton';
+import Puzzle from './photo-puzzle/Puzzle';
 
 
 function BakingGame() {
@@ -41,6 +42,7 @@ function BakingGame() {
         <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
       </div>
       <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
+      <Puzzle>PLEASE WORK DEAR GOD.</Puzzle>
       {(() => {
         return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
       })()}

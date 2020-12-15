@@ -1,7 +1,23 @@
-.image-wrapper {
-  height: 50vh;
-  /* width: auto; */
+.Puzzle {
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
+
+.Board {
+  position: relative;
+  padding: 0;
+}
+
+.Tiles {
+  position: absolute;
+  list-style: none;
+  background: #ec6f66;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+
 
 .floating-image {
     animation: Image-float infinite 3s ease-in-out;
@@ -11,8 +27,14 @@
     margin-right: auto;
     height: 100% - 150px; 
     max-width: 20%;
-    
 }
+
+
+.image-wrapper {
+  height: 50vh;
+  /* width: auto; */
+}
+
 
 .still-image {
     display: block;
