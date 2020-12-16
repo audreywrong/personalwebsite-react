@@ -2,8 +2,9 @@ import React from "react";
 import {Motion, spring} from "react-motion";
 import { getMatrixPosition, getVisualPosition } from "./Helpers";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./Constants";
+import './Tile.css';
 
-function Tiles(props) {
+function Tile(props) {
   const { tile, index, width, height, handleTileClick, imgUrl } = props;
 
   const { row, col } = getMatrixPosition(index);
@@ -14,7 +15,7 @@ function Tiles(props) {
     translateX: visualPos.x,
     translateY: visualPos.y,
     backgroundImage: `url(${imgUrl})`,
-    backgroundSize: `${BOARD_SIZE}px`,
+    backgroundSize: `${BOARD_SIZE * 1.15}px`,
     backgroundPosition: `${(100 / GRID_SIZE) * (tile % GRID_SIZE)}% ${(100 / GRID_SIZE) * (Math.floor(tile / GRID_SIZE))}%`,
   };
   const motionStyle = {

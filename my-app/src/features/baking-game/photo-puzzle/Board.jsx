@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Tile from "./Tiles";
+import Tile from "./Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./Constants";
 import { canSwap, shuffle, swap, isSolved } from "./Helpers";
-import '../BakingGame.css';
+import './Board.css';
+
 
 function Board({ imgUrl }) {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
