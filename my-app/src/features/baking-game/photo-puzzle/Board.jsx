@@ -42,11 +42,10 @@ function Board({ imgUrl }) {
       width: BOARD_SIZE,
       height: BOARD_SIZE,
     };
-    const hasWon = isSolved(tiles)
+    const hasWon = isSolved(tiles);
 
     return (
         <> 
-        {/* <style>{".tile{list-style: none}"}</style> */}
           <ul style={style} className="board">
             {tiles.map((tile, index) => (
               <Tile
@@ -54,6 +53,7 @@ function Board({ imgUrl }) {
                 index={index}
                 imgUrl={imgUrl}
                 tile={tile}
+                tiles={tiles}
                 width={pieceWidth}
                 height={pieceHeight}
                 handleTileClick={handleTileClick}
