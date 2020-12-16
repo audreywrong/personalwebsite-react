@@ -3,7 +3,7 @@ import './BakingGame.css';
 import breadLoadingScreen from '../../images/bread-loading-screen.png';
 import recipe from '../../images/recipe.png';
 import mixingBowl from '../../images/mixing-bowl.png';
-import frankenBread from '../../images/frankenbread.jpg';
+// import frankenBread from '../../images/frankenbread.jpg';
 import breadShaping from '../../images/bread-shaping.jpg';
 import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
@@ -42,7 +42,7 @@ function BakingGame() {
         <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
       </div>
       <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-      <Puzzle>PLEASE WORK DEAR GOD.</Puzzle>
+      <Puzzle></Puzzle>
       {(() => {
         return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
       })()}
@@ -59,7 +59,7 @@ const steps = [
   {
     stepNumber: 3,
     buttonText: `Ah, shape it, shape it good, sh-sh-shape it real good!`,
-    image: frankenBread,
+    // image: frankenBread,
     imgClass: 'still-image',
   },
   {stepNumber: 4, buttonText: `It has to rise. Again.`, image: breadShaping, imgClass: 'still-image'},
