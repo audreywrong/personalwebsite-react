@@ -1,13 +1,13 @@
-import React from "react";
-import {Motion, spring} from "react-motion";
-import { getMatrixPosition, getVisualPosition } from "./Helpers";
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./Constants";
+import React from 'react';
+import {Motion, spring} from 'react-motion';
+import {getMatrixPosition, getVisualPosition} from './Helpers';
+import {TILE_COUNT, GRID_SIZE, BOARD_SIZE} from './Constants';
 import './Tile.css';
 
 function Tile(props) {
-  const { tiles, tile, index, width, height, handleTileClick, imgUrl } = props;
+  const {tiles, tile, index, width, height, handleTileClick, imgUrl} = props;
 
-  const { row, col } = getMatrixPosition(index);
+  const {row, col} = getMatrixPosition(index);
   const visualPos = getVisualPosition(row, col, width, height);
   const tileStyle = {
     width: `calc(100% / ${GRID_SIZE})`,
@@ -15,19 +15,20 @@ function Tile(props) {
     translateX: visualPos.x,
     translateY: visualPos.y,
     backgroundImage: `url(${imgUrl})`,
-    // backgroundSize: `${BOARD_SIZE}px`,
+    backgroundSize: `${BOARD_SIZE}px`,
     backgroundPosition: `${(100 / GRID_SIZE) * (tile % GRID_SIZE)}% ${(100 / GRID_SIZE) * getRowNumber(tiles, tile)}%`,
   };
+
   const motionStyle = {
-      translateX: spring(visualPos.x),
-      translateY: spring(visualPos.y)
-  }
+    translateX: spring(visualPos.x),
+    translateY: spring(visualPos.y),
+  };
 
   return (
     <Motion style={motionStyle}>
-      {({translateX, translateY}) => (  
+      {({translateX, translateY}) => (
         <li
-        style={{
+          style={{
             ...tileStyle,
             transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
             // Is last tile?
@@ -45,7 +46,6 @@ function Tile(props) {
 
 export default Tile;
 
-
 /*
 Troubleshooting from even grid size to all grid sizes from source code.
 
@@ -54,17 +54,17 @@ Output: [0, 0, 0, 1, 1, 1, 2, 2, 2]
 */
 
 const getRowNumber = (allTiles, thisTile) => {
-  const rowSize = Math.sqrt(allTiles.length)  
+  const rowSize = Math.sqrt(allTiles.length);
   let rowNumber = -1;
 
-  for(let i = 0; i < allTiles.length; i++) {
-    const el = allTiles[i]
-    if(el % rowSize === 0) {
+  for (let i = 0; i < allTiles.length; i++) {
+    const el = allTiles[i];
+    if (el % rowSize === 0) {
       rowNumber++;
     }
 
-    if(el === thisTile) {
-      return rowNumber; 
+    if (el === thisTile) {
+      return rowNumber;
     }
   }
-}
+};
