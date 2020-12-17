@@ -1,4 +1,4 @@
-import { TILE_COUNT, GRID_SIZE } from "./Constants";
+import {TILE_COUNT, GRID_SIZE} from './Constants';
 
 // Credits to https://codepen.io/unindented/pen/QNWdRQ
 export function isSolvable(tiles) {
@@ -26,10 +26,12 @@ export function getIndex(row, col) {
 }
 
 // Get the row/col pair from a linear index.
-export function getMatrixPosition(index) {
+export function getMatrixPosition(index, tile) {
   return {
-    row: Math.floor(index / GRID_SIZE),
     col: index % GRID_SIZE,
+    initialCol: tile % GRID_SIZE,
+    initialRow: Math.floor(tile / GRID_SIZE),
+    row: Math.floor(index / GRID_SIZE),
   };
 }
 
@@ -42,19 +44,15 @@ export function getVisualPosition(row, col, width, height) {
 
 export function shuffle(tiles) {
   const shuffledTiles = [
-    ...tiles
-      .filter((t) => t !== tiles.length - 1)
-      .sort(() => Math.random() - 0.5),
+    ...tiles.filter(t => t !== tiles.length - 1).sort(() => Math.random() - 0.5),
     tiles.length - 1,
   ];
-  return isSolvable(shuffledTiles) && !isSolved(shuffledTiles)
-    ? shuffledTiles
-    : shuffle(shuffledTiles);
+  return isSolvable(shuffledTiles) && !isSolved(shuffledTiles) ? shuffledTiles : shuffle(shuffledTiles);
 }
 
 export function canSwap(srcIndex, destIndex) {
-  const { row: srcRow, col: srcCol } = getMatrixPosition(srcIndex);
-  const { row: destRow, col: destCol } = getMatrixPosition(destIndex);
+  const {row: srcRow, col: srcCol} = getMatrixPosition(srcIndex);
+  const {row: destRow, col: destCol} = getMatrixPosition(destIndex);
   return Math.abs(srcRow - destRow) + Math.abs(srcCol - destCol) === 1;
 }
 
@@ -65,21 +63,21 @@ export function swap(tiles, src, dest) {
 }
 
 export function updateURLParameter(url, param, paramVal) {
-  var newAdditionalURL = "";
-  var tempArray = url.split("?");
+  var newAdditionalURL = '';
+  var tempArray = url.split('?');
   var baseURL = tempArray[0];
   var additionalURL = tempArray[1];
-  var temp = "";
+  var temp = '';
   if (additionalURL) {
-    tempArray = additionalURL.split("&");
+    tempArray = additionalURL.split('&');
     for (var i = 0; i < tempArray.length; i++) {
-      if (tempArray[i].split("=")[0] !== param) {
+      if (tempArray[i].split('=')[0] !== param) {
         newAdditionalURL += temp + tempArray[i];
-        temp = "&";
+        temp = '&';
       }
     }
   }
 
-  var rows_txt = temp + "" + param + "=" + paramVal;
-  return baseURL + "?" + newAdditionalURL + rows_txt;
+  var rows_txt = temp + '' + param + '=' + paramVal;
+  return baseURL + '?' + newAdditionalURL + rows_txt;
 }
