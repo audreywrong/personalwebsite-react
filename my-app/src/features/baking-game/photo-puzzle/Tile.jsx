@@ -18,6 +18,7 @@ const Tile = props => {
     backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 * initialRow) / (GRID_SIZE - 1)}%`,
     backgroundSize: `${GRID_SIZE * 100}%`,
   };
+
   const motionStyle = {
     translateX: spring(visualPos.x),
     translateY: spring(visualPos.y),
