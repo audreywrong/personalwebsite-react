@@ -1,6 +1,6 @@
 import React from 'react';
 import {Motion, spring} from 'react-motion';
-import {getMatrixPosition, getVisualPosition} from './Helpers';
+import {getMatrixPosition, getVisualPosition} from './PuzzleHelpers';
 import {TILE_COUNT, GRID_SIZE, BOARD_SIZE} from './Constants';
 import './Tile.css';
 

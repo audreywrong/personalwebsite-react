@@ -8,9 +8,9 @@ import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
-import poop from '../../images/poop.png';
 import BackButton from './back-button/BackButton';
 import Puzzle from './photo-puzzle/Puzzle';
+import CheatCode from './cheat-code/CheatCode';
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
@@ -34,7 +34,7 @@ function BakingGame() {
   }
 
   return poopedOn ? (
-    <img className="poop-image" src={poop} />
+    <CheatCode></CheatCode>
   ) : (
     <>
       {(() => {

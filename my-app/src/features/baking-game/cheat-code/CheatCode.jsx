@@ -1,4 +1,4 @@
-import poop from '../../images/poop.png';
+import poop from '../../../images/poop.png';
 
 // a key map of allowed keys
 const allowedKeys = {
@@ -16,10 +16,12 @@ const poopCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 
 // a variable to remember the 'position' the user has reached so far.
 let poopCodePosition = 0;
 
+const CheatCode = () => <img alt="poop" className="poop-image" onKeyDown={handleKeyDown} src={poop} />;
+
 // add keydown event listener
-document.addEventListener('keydown', function (e) {
+const handleKeyDown = keyPressEvent => {
   // get the value of the key code from the key map
-  const key = allowedKeys[e.key];
+  const key = allowedKeys[keyPressEvent.key];
   // get the value of the required key from the konami code
   const requiredKey = poopCode[poopCodePosition];
 
@@ -36,6 +38,6 @@ document.addEventListener('keydown', function (e) {
   } else {
     poopCodePosition = 0;
   }
-});
+};
 
-export default CheatCodes;
+export default CheatCode;
