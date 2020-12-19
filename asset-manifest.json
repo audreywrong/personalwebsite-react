@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/personalwebsite-react/static/css/main.6af1bb32.chunk.css",
+    "main.js": "/personalwebsite-react/static/js/main.e58e1f33.chunk.js",
+    "main.js.map": "/personalwebsite-react/static/js/main.e58e1f33.chunk.js.map",
+    "runtime-main.js": "/personalwebsite-react/static/js/runtime-main.609046ae.js",
+    "runtime-main.js.map": "/personalwebsite-react/static/js/runtime-main.609046ae.js.map",
+    "static/js/2.1386829d.chunk.js": "/personalwebsite-react/static/js/2.1386829d.chunk.js",
+    "static/js/2.1386829d.chunk.js.map": "/personalwebsite-react/static/js/2.1386829d.chunk.js.map",
+    "index.html": "/personalwebsite-react/index.html",
+    "static/css/main.6af1bb32.chunk.css.map": "/personalwebsite-react/static/css/main.6af1bb32.chunk.css.map",
+    "static/js/2.1386829d.chunk.js.LICENSE.txt": "/personalwebsite-react/static/js/2.1386829d.chunk.js.LICENSE.txt",
+    "static/media/frankenbread.f49ad202.png": "/personalwebsite-react/static/media/frankenbread.f49ad202.png",
+    "static/media/logo.db36153e.svg": "/personalwebsite-react/static/media/logo.db36153e.svg",
+    "static/media/mixing-bowl.354b23f9.png": "/personalwebsite-react/static/media/mixing-bowl.354b23f9.png",
+    "static/media/recipe.68925049.png": "/personalwebsite-react/static/media/recipe.68925049.png",
+    "static/media/rising.81136a46.png": "/personalwebsite-react/static/media/rising.81136a46.png",
+    "static/media/sleeping-bread.c2f6131a.png": "/personalwebsite-react/static/media/sleeping-bread.c2f6131a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.609046ae.js",
+    "static/js/2.1386829d.chunk.js",
+    "static/css/main.6af1bb32.chunk.css",
+    "static/js/main.e58e1f33.chunk.js"
+  ]
+}
