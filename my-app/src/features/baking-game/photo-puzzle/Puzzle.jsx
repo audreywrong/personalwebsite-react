@@ -3,12 +3,17 @@ import Board from './Board';
 import frankenbread from '../../../images/frankenbread.png';
 import './Puzzle.css';
 
-function Puzzle() {
+// const Puzzle = (props) =>
+//   props.show;
+
+const Puzzle = props => {
+  if (!props.show) return <></>;
+
   return (
     <div className="puzzle">
       <Board imgUrl={frankenbread} />
     </div>
   );
-}
+};
 
 export default Puzzle;
