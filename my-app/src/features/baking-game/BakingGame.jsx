@@ -11,11 +11,13 @@ import freshLoaf from '../../images/fresh-loaf.png';
 import BackButton from './back-button/BackButton';
 import Puzzle from './photo-puzzle/Puzzle';
 import CheatCode from './cheat-code/CheatCode';
+import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
+import {useSelector} from 'react-redux';
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [bakeryName, setBakeryName] = useState('');
-  const poopedOn = true;
+  const poopedOn = useSelector(selectPoopedOn);
 
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
@@ -33,35 +35,42 @@ function BakingGame() {
     setCurrentStep(steps[currentStep.stepNumber - 1]);
   }
 
-  return poopedOn ? (
-    <CheatCode></CheatCode>
-  ) : (
+  return (
     <>
+      <CheatCode {...{show: poopedOn}}></CheatCode>
       {(() => {
-        return bakeryName && <h1>{bakeryName}</h1>;
-      })()}
-
-      {(() => {
-        /* anon function returns undefined if not truthy */
         return (
-          currentStep.image && (
-            <div className="image-wrapper">
-              <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
-            </div>
+          !poopedOn && (
+            <>
+              {(() => {
+                return bakeryName && <h1>{bakeryName}</h1>;
+              })()}
+
+              {(() => {
+                /* anon function returns undefined if not truthy */
+                return (
+                  currentStep.image && (
+                    <div className="image-wrapper">
+                      <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
+                    </div>
+                  )
+                );
+              })()}
+
+              <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
+              <Puzzle {...{show: currentStep.stepNumber === 3}}></Puzzle>
+
+              {(() => {
+                return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
+              })()}
+
+              <BackButton
+                {...{bakeryName: bakeryName, currentStep: currentStep, handleClickDecrement: handleClickDecrement}}
+              ></BackButton>
+            </>
           )
         );
       })()}
-
-      <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-      <Puzzle {...{show: currentStep.stepNumber === 3}}></Puzzle>
-
-      {(() => {
-        return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
-      })()}
-
-      <BackButton
-        {...{bakeryName: bakeryName, currentStep: currentStep, handleClickDecrement: handleClickDecrement}}
-      ></BackButton>
     </>
   );
 }
