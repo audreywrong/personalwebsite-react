@@ -3,7 +3,6 @@ import './BakingGame.css';
 import breadLoadingScreen from '../../images/bread-loading-screen.png';
 import recipe from '../../images/recipe.png';
 import mixingBowl from '../../images/mixing-bowl.png';
-// import frankenBread from '../../images/frankenbread.jpg';
 import breadShaping from '../../images/bread-shaping.jpg';
 import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
@@ -11,7 +10,6 @@ import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
 import BackButton from './back-button/BackButton';
 import Puzzle from './photo-puzzle/Puzzle';
-
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
@@ -38,15 +36,27 @@ function BakingGame() {
       {(() => {
         return bakeryName && <h1>{bakeryName}</h1>;
       })()}
-      <div className="image-wrapper">
-        <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
-      </div>
+
+      {(() => {
+        return (
+          currentStep.image && (
+            <div className="image-wrapper">
+              <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
+            </div>
+          )
+        );
+      })()}
+
       <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-      <Puzzle></Puzzle>
+      <Puzzle {...{show: currentStep.stepNumber === 3}}></Puzzle>
+
       {(() => {
         return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
       })()}
-      <BackButton {...{bakeryName:bakeryName, currentStep:currentStep, handleClickDecrement:handleClickDecrement}}></BackButton>
+
+      <BackButton
+        {...{bakeryName: bakeryName, currentStep: currentStep, handleClickDecrement: handleClickDecrement}}
+      ></BackButton>
     </>
   );
 }
@@ -59,7 +69,6 @@ const steps = [
   {
     stepNumber: 3,
     buttonText: `Ah, shape it, shape it good, sh-sh-shape it real good!`,
-    // image: frankenBread,
     imgClass: 'still-image',
   },
   {stepNumber: 4, buttonText: `It has to rise. Again.`, image: breadShaping, imgClass: 'still-image'},
