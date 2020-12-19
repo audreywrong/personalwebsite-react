@@ -1,10 +1,7 @@
 .floating-image {
   animation: Image-float infinite 3s ease-in-out;
   display: block;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100% - 150px;
+  margin: 150px auto 0;
   max-width: 20%;
 }
 
@@ -14,17 +11,13 @@
 
 .still-image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 150px;
+  margin: 150px auto 0;
   max-width: 20%;
 }
 
 button {
   display: block;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 25px auto 0;
   text-align: center;
 }
 
