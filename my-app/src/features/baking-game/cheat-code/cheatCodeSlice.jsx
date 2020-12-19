@@ -7,6 +7,7 @@ export const cheatCodeSlice = createSlice({
   },
   reducers: {
     poopImage: oldCheatCodeSlice => {
+      debugger;
       oldCheatCodeSlice.poopedOn = true;
     },
   },
