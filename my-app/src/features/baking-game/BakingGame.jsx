@@ -11,7 +11,6 @@ import freshLoaf from '../../images/fresh-loaf.png';
 import poop from '../../images/poop.png';
 import BackButton from './back-button/BackButton';
 import Puzzle from './photo-puzzle/Puzzle';
-// import CheatCodes from './cheat-codes';
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
@@ -75,7 +74,6 @@ const steps = [
   {
     stepNumber: 3,
     buttonText: `Ah, shape it, shape it good, sh-sh-shape it real good!`,
-    // image: frankenBread,
     imgClass: 'still-image',
   },
   {stepNumber: 4, buttonText: `It has to rise. Again.`, image: breadShaping, imgClass: 'still-image'},
