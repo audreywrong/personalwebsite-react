@@ -8,12 +8,15 @@ import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
+import poop from '../../images/poop.png';
 import BackButton from './back-button/BackButton';
 import Puzzle from './photo-puzzle/Puzzle';
+// import CheatCodes from './cheat-codes';
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
   const [bakeryName, setBakeryName] = useState('');
+  const poopedOn = true;
 
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
@@ -31,7 +34,9 @@ function BakingGame() {
     setCurrentStep(steps[currentStep.stepNumber - 1]);
   }
 
-  return (
+  return poopedOn ? (
+    <img className="poop-image" src={poop} />
+  ) : (
     <>
       {(() => {
         return bakeryName && <h1>{bakeryName}</h1>;

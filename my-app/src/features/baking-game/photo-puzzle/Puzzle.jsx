@@ -3,9 +3,6 @@ import Board from './Board';
 import frankenbread from '../../../images/frankenbread.png';
 import './Puzzle.css';
 
-// const Puzzle = (props) =>
-//   props.show;
-
 const Puzzle = props => {
   if (!props.show) return <></>;
 

@@ -20,6 +20,12 @@
   max-width: 20%;
 }
 
+.poop-image {
+  display: block;
+  margin: auto;
+  height: 95vh;
+}
+
 button {
   display: block;
   margin-top: 25px;
