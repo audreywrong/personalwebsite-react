@@ -2,3 +2,10 @@
   position: relative;
   padding: 0;
 }
+
+#board-button {
+  display: block;
+  position: relative;
+  margin: 1px auto 0;
+  text-align: center;
+}

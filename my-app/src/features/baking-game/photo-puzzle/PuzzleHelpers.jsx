@@ -47,6 +47,7 @@ export function shuffle(tiles) {
     ...tiles.filter(t => t !== tiles.length - 1).sort(() => Math.random() - 0.5),
     tiles.length - 1,
   ];
+  console.log(isSolvable(shuffledTiles));
   return isSolvable(shuffledTiles) && !isSolved(shuffledTiles) ? shuffledTiles : shuffle(shuffledTiles);
 }
 

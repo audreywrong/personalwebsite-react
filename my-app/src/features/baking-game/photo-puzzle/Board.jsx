@@ -67,9 +67,13 @@ function Board({imgUrl}) {
       </ul>
       {hasWon && isStarted && <div>Puzzle solved</div>}
       {!isStarted ? (
-        <button onClick={() => handleStartClick()}>Start game</button>
+        <button id="board-button" onClick={() => handleStartClick()}>
+          Start game
+        </button>
       ) : (
-        <button onClick={() => handleResetClick()}>Reset game</button>
+        <button id="board-button" onClick={() => handleResetClick()}>
+          Reset game
+        </button>
       )}
     </>
   );
