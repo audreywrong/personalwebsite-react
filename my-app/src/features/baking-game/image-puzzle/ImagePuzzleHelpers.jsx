@@ -1,9 +1,7 @@
-import {TILE_COUNT, GRID_SIZE} from './Constants';
-
 // Credits to https://codepen.io/unindented/pen/QNWdRQ
-export function isSolvable(tiles) {
+export function isSolvable(tiles, tileCount) {
   let product = 1;
-  for (let i = 1, l = TILE_COUNT - 1; i <= l; i++) {
+  for (let i = 1, l = tileCount - 1; i <= l; i++) {
     for (let j = i + 1, m = l + 1; j <= m; j++) {
       product *= (tiles[i - 1] - tiles[j - 1]) / (i - j);
     }
@@ -21,17 +19,17 @@ export function isSolved(tiles) {
 }
 
 // Get the linear index from a row/col pair.
-export function getIndex(row, col) {
-  return parseInt(row, 10) * GRID_SIZE + parseInt(col, 10);
+export function getIndex(row, col, gridSize) {
+  return parseInt(row, 10) * gridSize + parseInt(col, 10);
 }
 
 // Get the row/col pair from a linear index.
-export function getMatrixPosition(index, tile) {
+export function getMatrixPosition(index, tile, gridSize) {
   return {
-    col: index % GRID_SIZE,
-    initialCol: tile % GRID_SIZE,
-    initialRow: Math.floor(tile / GRID_SIZE),
-    row: Math.floor(index / GRID_SIZE),
+    col: index % gridSize,
+    initialCol: tile % gridSize,
+    initialRow: Math.floor(tile / gridSize),
+    row: Math.floor(index / gridSize),
   };
 }
 
@@ -49,12 +47,6 @@ export function shuffle(tiles) {
   ];
   console.log(isSolvable(shuffledTiles));
   return isSolvable(shuffledTiles) && !isSolved(shuffledTiles) ? shuffledTiles : shuffle(shuffledTiles);
-}
-
-export function canSwap(srcIndex, destIndex) {
-  const {row: srcRow, col: srcCol} = getMatrixPosition(srcIndex);
-  const {row: destRow, col: destCol} = getMatrixPosition(destIndex);
-  return Math.abs(srcRow - destRow) + Math.abs(srcCol - destCol) === 1;
 }
 
 export function swap(tiles, src, dest) {

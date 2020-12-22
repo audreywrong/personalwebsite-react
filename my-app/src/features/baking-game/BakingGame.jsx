@@ -9,10 +9,10 @@ import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
 import BackButton from './back-button/BackButton';
-import Puzzle from './photo-puzzle/Puzzle';
 import CheatCode from './cheat-code/CheatCode';
 import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
 import {useSelector} from 'react-redux';
+import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 
 function BakingGame() {
   const [currentStep, setCurrentStep] = useState(steps[0]);
@@ -42,9 +42,11 @@ function BakingGame() {
         return (
           !poopedOn && (
             <>
-              {(() => {
-                return bakeryName && <h1>{bakeryName}</h1>;
-              })()}
+              <div className="bakery-name-heading">
+                {(() => {
+                  return bakeryName && <h1>{bakeryName}</h1>;
+                })()}
+              </div>
 
               {(() => {
                 /* anon function returns undefined if not truthy */
@@ -58,7 +60,7 @@ function BakingGame() {
               })()}
 
               <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-              <Puzzle {...{show: currentStep.stepNumber === 3}}></Puzzle>
+              <SlidePuzzle {...{show: currentStep.stepNumber === 3}}></SlidePuzzle>
 
               {(() => {
                 return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
@@ -117,11 +119,13 @@ class NameForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Enter bakery name here:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+        <div className="bakery-form">
+          <label>
+            Enter bakery name here:
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />{' '}
+        </div>
       </form>
     );
   }

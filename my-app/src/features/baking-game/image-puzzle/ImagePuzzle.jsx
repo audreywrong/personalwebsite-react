@@ -1,15 +1,15 @@
 import React from 'react';
 import Board from './Board';
 import frankenbread from '../../../images/frankenbread.png';
-import './Puzzle.css';
+import './ImagePuzzle.css';
 
-const Puzzle = props =>
+const ImagePuzzle = props =>
   props.show ? (
     <div className="puzzle">
-      <Board imgUrl={frankenbread} />
+      <Board {...props} />
     </div>
   ) : (
     <></>
   );
 
-export default Puzzle;
+export default ImagePuzzle;

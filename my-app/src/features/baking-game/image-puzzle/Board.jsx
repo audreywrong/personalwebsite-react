@@ -1,35 +1,24 @@
 import React, {useState} from 'react';
 import Tile from './Tile';
-import {TILE_COUNT, GRID_SIZE, BOARD_SIZE} from './Constants';
-import {canSwap, shuffle, swap, isSolved} from './PuzzleHelpers';
+import {shuffle, isSolved} from './ImagePuzzleHelpers';
 import './Board.css';
 
-const INITIAL_TILES = [...Array(TILE_COUNT).keys()];
-
-function Board({imgUrl}) {
-  const [tiles, setTiles] = useState(INITIAL_TILES);
+function Board(props) {
   const [isStarted, setIsStarted] = useState(false);
   console.log('is started:', isStarted);
 
   const shuffleTiles = () => {
-    const shuffledTiles = shuffle(tiles);
-    setTiles(shuffledTiles);
+    const shuffledTiles = shuffle(props.tiles);
+    props.setTiles(shuffledTiles);
   };
 
   const unFuckTiles = () => {
     setIsStarted(false);
-    setTiles(INITIAL_TILES);
-  };
-
-  const swapTiles = tileIndex => {
-    if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
-      const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1));
-      setTiles(swappedTiles);
-    }
+    props.setTiles(props.initalTiles);
   };
 
   const handleTileClick = index => {
-    swapTiles(index);
+    props.swapTiles(index);
   };
 
   const handleResetClick = index => {
@@ -41,24 +30,25 @@ function Board({imgUrl}) {
     setIsStarted(true);
   };
 
-  const pieceWidth = Math.round(BOARD_SIZE / GRID_SIZE);
-  const pieceHeight = Math.round(BOARD_SIZE / GRID_SIZE);
+  const pieceWidth = Math.round(props.boardSize / props.gridSize);
+  const pieceHeight = Math.round(props.boardSize / props.gridSize);
   const style = {
-    width: BOARD_SIZE,
-    height: BOARD_SIZE,
+    width: props.boardSize,
+    height: props.boardSize,
   };
-  const hasWon = isSolved(tiles);
+  debugger;
+  const hasWon = isSolved(props.tiles);
 
   return (
     <>
       <ul style={style} className="board">
-        {tiles.map((tile, index) => (
+        {props.tiles.map((tile, index) => (
           <Tile
             key={tile}
             index={index}
-            imgUrl={imgUrl}
+            imgUrl={props.imgUrl}
             tile={tile}
-            tiles={tiles}
+            tiles={props.tiles}
             width={pieceWidth}
             height={pieceHeight}
             handleTileClick={handleTileClick}
