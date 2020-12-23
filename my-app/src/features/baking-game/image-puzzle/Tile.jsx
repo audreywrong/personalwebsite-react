@@ -4,10 +4,9 @@ import {getMatrixPosition, getVisualPosition} from './ImagePuzzleHelpers';
 import './Tile.css';
 
 const Tile = props => {
-  const {col, initialRow, row} = getMatrixPosition(props.index, props.tile);
+  const {col, initialRow, row} = getMatrixPosition(props.index, props.tile, props.gridSize);
   const visualPos = getVisualPosition(row, col, props.width, props.height);
 
-  debugger;
   const tileStyle = {
     height: Math.ceil(props.boardSize / props.gridSize),
     width: Math.ceil(props.boardSize / props.gridSize),
@@ -27,20 +26,22 @@ const Tile = props => {
 
   return (
     <Motion style={motionStyle}>
-      {({translateX, translateY}) => (
-        <li
-          style={{
-            ...tileStyle,
-            transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
-            // Is last tile?
-            opacity: props.tile === props.tileCount - 1 ? 0 : 1,
-          }}
-          className="tile"
-          onClick={() => props.handleTileClick(props.index)}
-        >
-          {!props.imgUrl && `${props.tile + 1}`}
-        </li>
-      )}
+      {({translateX, translateY}) => {
+        return (
+          <li
+            style={{
+              ...tileStyle,
+              transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
+              // Is last tile?
+              opacity: props.tile === props.tileCount - 1 ? 0 : 1,
+            }}
+            className="tile"
+            onClick={() => props.handleTileClick(props.index)}
+          >
+            {!props.imgUrl && `${props.tile + 1}`}
+          </li>
+        );
+      }}
     </Motion>
   );
 };

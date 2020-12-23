@@ -5,6 +5,7 @@ import './Board.css';
 
 function Board(props) {
   const [isStarted, setIsStarted] = useState(false);
+  const [initialTiles, setInitialTiles] = useState(props.initialTiles);
   console.log('is started:', isStarted);
 
   const shuffleTiles = () => {
@@ -14,14 +15,14 @@ function Board(props) {
 
   const unFuckTiles = () => {
     setIsStarted(false);
-    props.setTiles(props.initalTiles);
+    props.setTiles(initialTiles);
   };
 
   const handleTileClick = index => {
     props.swapTiles(index);
   };
 
-  const handleResetClick = index => {
+  const handleResetClick = () => {
     unFuckTiles();
   };
 
@@ -36,24 +37,27 @@ function Board(props) {
     width: props.boardSize,
     height: props.boardSize,
   };
-  debugger;
   const hasWon = isSolved(props.tiles);
 
   return (
     <>
       <ul style={style} className="board">
-        {props.tiles.map((tile, index) => (
-          <Tile
-            key={tile}
-            index={index}
-            imgUrl={props.imgUrl}
-            tile={tile}
-            tiles={props.tiles}
-            width={pieceWidth}
-            height={pieceHeight}
-            handleTileClick={handleTileClick}
-          />
-        ))}
+        {props.tiles.map((tile, index) => {
+          return (
+            <Tile
+              key={tile}
+              index={index}
+              imgUrl={props.imgUrl}
+              tile={tile}
+              tiles={props.tiles}
+              gridSize={props.gridSize}
+              boardSize={props.boardSize}
+              width={pieceWidth}
+              height={pieceHeight}
+              handleTileClick={handleTileClick}
+            />
+          );
+        })}
       </ul>
       {hasWon && isStarted && <div>Puzzle solved</div>}
       {!isStarted ? (

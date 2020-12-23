@@ -8,6 +8,7 @@ import rising from '../../images/rising.png';
 import resting from '../../images/sleeping-bread.png';
 import baking from '../../images/baking.jpg';
 import freshLoaf from '../../images/fresh-loaf.png';
+import frankenbread from '../../images/frankenbread.png';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
 import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
@@ -60,7 +61,7 @@ function BakingGame() {
               })()}
 
               <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-              <SlidePuzzle {...{show: currentStep.stepNumber === 3}}></SlidePuzzle>
+              <SlidePuzzle {...{show: currentStep.stepNumber === 3, imgUrl: currentStep.slideImage}}></SlidePuzzle>
 
               {(() => {
                 return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
@@ -85,6 +86,7 @@ const steps = [
   {
     stepNumber: 3,
     buttonText: `Ah, shape it, shape it good, sh-sh-shape it real good!`,
+    slideImage: frankenbread,
     imgClass: 'still-image',
   },
   {stepNumber: 4, buttonText: `It has to rise. Again.`, image: breadShaping, imgClass: 'still-image'},

@@ -1,6 +1,5 @@
 import React from 'react';
 import Board from './Board';
-import frankenbread from '../../../images/frankenbread.png';
 import './ImagePuzzle.css';
 
 const ImagePuzzle = props =>
