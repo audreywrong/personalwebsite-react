@@ -3,30 +3,29 @@ import './BakingGame.css';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
 import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 
 function BakingGame() {
-  // const [currentStep, setCurrentStep] = useState(steps[0]);
   const [bakeryName, setBakeryName] = useState('');
   const poopedOn = useSelector(selectPoopedOn);
   const currentStep = useSelector(selectStep);
-
+  const dispatch = useDispatch();
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
   }
 
   function handleClick() {
     if (currentStep.stepNumber < 8) {
-      setCurrentStep(currentStep.stepNumber + 1);
+      dispatch(setCurrentStep(currentStep.stepNumber + 1));
     } else {
-      setCurrentStep(0);
+      dispatch(setCurrentStep(0));
     }
   }
 
   function handleClickDecrement() {
-    setCurrentStep(currentStep.stepNumber - 1);
+    dispatch(setCurrentStep(currentStep.stepNumber - 1));
   }
 
   return (

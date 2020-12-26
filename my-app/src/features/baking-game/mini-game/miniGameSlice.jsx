@@ -89,17 +89,16 @@ export const miniGameSlice = createSlice({
     ],
   },
   reducers: {
-    setStepIsSolved: (state, action) => {
-      state.steps[action.stepNumber].isMiniGameSolved = true;
+    setStepIsSolved: state => {
+      state.steps[state.currentStepNumber].isMiniGameSolved = true;
     },
     setCurrentStep: (state, action) => {
-      state.miniGame.currentStepNumber = action.stepNumber;
+      state.currentStepNumber = action.payload;
     },
   },
 });
 
 export const selectStep = state => {
-  debugger;
   return state.miniGame.steps[state.miniGame.currentStepNumber];
 };
 export const {setStepIsSolved, setCurrentStep} = miniGameSlice.actions;
