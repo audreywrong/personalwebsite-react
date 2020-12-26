@@ -24,12 +24,12 @@ export function getIndex(row, col, gridSize) {
 }
 
 // Get the row/col pair from a linear index.
-export function getMatrixPosition(index, tile, gridSize) {
+export function getMatrixPosition(currentIndex, originalTileIndex, gridSize) {
   return {
-    col: index % gridSize,
-    initialCol: tile % gridSize,
-    initialRow: Math.floor(tile / gridSize),
-    row: Math.floor(index / gridSize),
+    col: currentIndex % gridSize,
+    initialCol: originalTileIndex % gridSize,
+    initialRow: Math.floor(originalTileIndex / gridSize),
+    row: Math.floor(currentIndex / gridSize),
   };
 }
 

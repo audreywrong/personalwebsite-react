@@ -8,12 +8,6 @@ export const BOARD_SIZE = 320;
 
 const INITIAL_TILES = [...Array(TILE_COUNT).keys()];
 
-export function canSwap(srcIndex, destIndex) {
-  const {row: srcRow, col: srcCol} = getMatrixPosition(srcIndex);
-  const {row: destRow, col: destCol} = getMatrixPosition(destIndex);
-  return Math.abs(srcRow - destRow) + Math.abs(srcCol - destCol) === 1;
-}
-
 export const SlidePuzzle = props => {
   const [tiles, setTiles] = useState(INITIAL_TILES);
 
@@ -22,6 +16,12 @@ export const SlidePuzzle = props => {
       const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1));
       setTiles(swappedTiles);
     }
+  };
+
+  const canSwap = (srcIndex, destIndex) => {
+    const {row: srcRow, col: srcCol} = getMatrixPosition(srcIndex, INITIAL_TILES.indexOf(srcIndex), GRID_SIZE);
+    const {row: destRow, col: destCol} = getMatrixPosition(destIndex, INITIAL_TILES.indexOf(destIndex), GRID_SIZE);
+    return Math.abs(srcRow - destRow) + Math.abs(srcCol - destCol) === 1;
   };
 
   return (
