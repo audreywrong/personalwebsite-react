@@ -1,24 +1,17 @@
 import {React, useState, Component} from 'react';
 import './BakingGame.css';
-import breadLoadingScreen from '../../images/bread-loading-screen.png';
-import recipe from '../../images/recipe.png';
-import mixingBowl from '../../images/mixing-bowl.png';
-import breadShaping from '../../images/bread-shaping.jpg';
-import rising from '../../images/rising.png';
-import resting from '../../images/sleeping-bread.png';
-import baking from '../../images/baking.jpg';
-import freshLoaf from '../../images/fresh-loaf.png';
-import frankenbread from '../../images/frankenbread.png';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
 import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
 import {useSelector} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
+import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 
 function BakingGame() {
-  const [currentStep, setCurrentStep] = useState(steps[0]);
+  // const [currentStep, setCurrentStep] = useState(steps[0]);
   const [bakeryName, setBakeryName] = useState('');
   const poopedOn = useSelector(selectPoopedOn);
+  const currentStep = useSelector(selectStep);
 
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
@@ -26,14 +19,14 @@ function BakingGame() {
 
   function handleClick() {
     if (currentStep.stepNumber < 8) {
-      setCurrentStep(steps[currentStep.stepNumber + 1]);
+      setCurrentStep(currentStep.stepNumber + 1);
     } else {
-      setCurrentStep(steps[0]);
+      setCurrentStep(0);
     }
   }
 
   function handleClickDecrement() {
-    setCurrentStep(steps[currentStep.stepNumber - 1]);
+    setCurrentStep(currentStep.stepNumber - 1);
   }
 
   return (
@@ -64,7 +57,12 @@ function BakingGame() {
               <SlidePuzzle {...{show: currentStep.stepNumber === 3, imgUrl: currentStep.slideImage}}></SlidePuzzle>
 
               {(() => {
-                return bakeryName && <button onClick={handleClick}>{currentStep.buttonText}</button>;
+                return (
+                  bakeryName &&
+                  ((currentStep.hasMiniGame && currentStep.isMiniGameSolved) || !currentStep.hasMiniGame) && (
+                    <button onClick={handleClick}>{currentStep.buttonText}</button>
+                  )
+                );
               })()}
 
               <BackButton
@@ -77,24 +75,6 @@ function BakingGame() {
     </>
   );
 }
-
-// type = step[]
-const steps = [
-  {stepNumber: 0, buttonText: `Let's Bake!`, image: breadLoadingScreen, imgClass: 'floating-image'},
-  {stepNumber: 1, buttonText: `Time to mix!`, image: recipe, imgClass: 'still-image'},
-  {stepNumber: 2, buttonText: `It's aliiiiive!`, image: mixingBowl, imgClass: 'still-image'},
-  {
-    stepNumber: 3,
-    buttonText: `Ah, shape it, shape it good, sh-sh-shape it real good!`,
-    slideImage: frankenbread,
-    imgClass: 'still-image',
-  },
-  {stepNumber: 4, buttonText: `It has to rise. Again.`, image: breadShaping, imgClass: 'still-image'},
-  {stepNumber: 5, buttonText: `Time to take a little nap!`, image: rising, imgClass: 'still-image'},
-  {stepNumber: 6, buttonText: `Bake this!`, image: resting, imgClass: 'still-image'},
-  {stepNumber: 7, buttonText: `Let's get this bread!`, image: baking, imgClass: 'still-image'},
-  {stepNumber: 8, buttonText: `You win! Want to bake again?`, image: freshLoaf, imgClass: 'floating-image'},
-];
 
 //Step 1 mini game
 
