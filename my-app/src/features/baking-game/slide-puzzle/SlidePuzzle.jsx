@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ImagePuzzle from '../image-puzzle/ImagePuzzle';
-import {swap, getMatrixPosition} from '../image-puzzle/ImagePuzzleHelpers';
+import {swap, getMatrixPosition, isSolvable, isSolved} from '../image-puzzle/ImagePuzzleHelpers';
 
 export const TILE_COUNT = 4;
 export const GRID_SIZE = 2;
@@ -10,6 +10,10 @@ const INITIAL_TILES = [...Array(TILE_COUNT).keys()];
 
 export const SlidePuzzle = props => {
   const [tiles, setTiles] = useState(INITIAL_TILES);
+  const _isSolvable = isSolvable;
+  const _isSolved = isSolved;
+
+  // import {isSolvable, isSolved} from '../image-puzzle/ImagePuzzleHelpers';
 
   const swapTiles = tileIndex => {
     if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
@@ -31,6 +35,7 @@ export const SlidePuzzle = props => {
         swapTiles,
         tiles,
         setTiles,
+        // shuffle,
         initialTiles: INITIAL_TILES,
         tileCount: TILE_COUNT,
         gridSize: GRID_SIZE,

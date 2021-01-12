@@ -1,6 +1,8 @@
 // Credits to https://codepen.io/unindented/pen/QNWdRQ
-export function isSolvable(tiles, tileCount) {
+export function isSolvable(tiles) {
   let product = 1;
+  let tileCount = tiles.length;
+
   for (let i = 1, l = tileCount - 1; i <= l; i++) {
     for (let j = i + 1, m = l + 1; j <= m; j++) {
       product *= (tiles[i - 1] - tiles[j - 1]) / (i - j);
@@ -40,12 +42,11 @@ export function getVisualPosition(row, col, width, height) {
   };
 }
 
-export function shuffle(tiles) {
+export function shuffle(currentTiles) {
   const shuffledTiles = [
-    ...tiles.filter(t => t !== tiles.length - 1).sort(() => Math.random() - 0.5),
-    tiles.length - 1,
+    ...currentTiles.filter(t => t !== currentTiles.length - 1).sort(() => Math.random() - 0.5),
+    currentTiles.length - 1,
   ];
-  console.log(isSolvable(shuffledTiles));
   return isSolvable(shuffledTiles) && !isSolved(shuffledTiles) ? shuffledTiles : shuffle(shuffledTiles);
 }
 
