@@ -18,7 +18,7 @@ function App() {
             Home
           </Link>
           <Link className="nav-item" to="/baking-game">
-            Game
+            Baking Game
           </Link>
         </nav>
       </BrowserRouter>
