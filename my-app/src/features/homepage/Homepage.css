@@ -1,4 +1,27 @@
+.column {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  min-height: 200px;
+  width: 50%;
+}
+
 h1 {
-  z-index: 1;
-  position: absolute;
+}
+
+.headshot {
+  border-radius: 100%;
+  width: 50%;
+  margin: auto;
+  display: block;
+  box-shadow: 0px 0px 5px 5px lightgrey;
+}
+
+.headshot:hover {
+  box-shadow: 0px 0px 5px 5px grey;
+}
+
+.row {
+  display: flex;
+  margin: 0 auto;
 }
