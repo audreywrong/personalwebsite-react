@@ -1,13 +1,21 @@
 import React from 'react';
 import './Homepage.css';
-// import personalSiteBackground from './personal-site-background.mp4';
 
 function Homepage() {
   return (
     <>
-      <h1 aria-label="Hi, I'm Audrey, web developer." class="blast-root">
-        Hi, I'm Audrey, web developer.
-        {/* <span class="blast" aria-hidden="true" style="opacity: 1;">
+      <p>body</p>
+      <p>h1</p>
+      <h1>Hi, I'm Audrey, web developer.</h1>
+      <p id="h1-tag">/h1</p>
+      <p>/body</p>
+      <p>/html</p>
+    </>
+  );
+}
+
+{
+  /* <span class="blast" aria-hidden="true" style="opacity: 1;">
           H
         </span>
         <span class="blast" aria-hidden="true" style="opacity: 1;">
@@ -85,10 +93,7 @@ function Homepage() {
           <span class="blast" aria-hidden="true" style="opacity: 1;">
             r
           </span>
-        </br> */}
-      </h1>
-    </>
-  );
+        </br> */
 }
 
 export default Homepage;
