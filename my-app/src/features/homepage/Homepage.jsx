@@ -5,9 +5,10 @@ import headshot from '../../images/headshot.jpg';
 function Homepage() {
   return (
     <div class="row">
-      <div class="column">
-        <p>{'<body>'}</p>
-        <p>{'<h1>'}</p>
+      <div class="column left-column">
+        <p class="tag">{'<html>'}</p>
+        <p class="tag margin-left-65">{'<body>'}</p>
+        <p class="tag margin-left-125">{'<h1>'}</p>
         <h1>
           <span class="blast" aria-hidden="true">
             H
@@ -88,11 +89,11 @@ function Homepage() {
             r
           </span>
         </h1>
-        <p>{'</h1>'}</p>
-        <p>{'</body>'}</p>
-        <p>{'</html>'}</p>
+        <p class="tag margin-left-125">{'</h1>'}</p>
+        <p class="tag margin-left-65">{'</body>'}</p>
+        <p class="tag">{'</html>'}</p>
       </div>
-      <div class="column">
+      <div class="column right-column">
         <img src={headshot} alt="Headshot" className="headshot" />
       </div>
     </div>

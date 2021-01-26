@@ -1,9 +1,30 @@
+body {
+  background-color: rgba(245, 232, 196, 0.5);
+}
+
+.blast {
+  font-family: 'FiraSans-ExtraBold';
+  font-size: 75px;
+  display: inline-block;
+}
+
 .column {
   align-items: center;
   display: flex;
   height: 100vh;
   min-height: 200px;
   width: 50%;
+}
+
+@font-face {
+  font-family: Farewell;
+  src: url('farewell.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: FiraSans-ExtraBold;
+  src: url('FiraSans-ExtraBold.ttf');
 }
 
 .headshot {
@@ -16,6 +37,43 @@
 
 .headshot:hover {
   box-shadow: 0px 0px 5px 5px grey;
+}
+
+.left-column {
+  flex-direction: column;
+  margin: 3rem 0;
+}
+
+.tag {
+  font-family: 'Farewell';
+  font-size: 25px;
+  margin: 0 auto 20px 20px;
+}
+
+.margin-left-65 {
+  margin-left: 65px;
+}
+
+.margin-left-125 {
+  margin-left: 125px;
+}
+
+.blast:hover {
+  animation: wiggle 1s infinite;
+  animation-timing-function: linear;
+  color: grey;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translate(2px, 0);
+  }
+  50% {
+    transform: translate(-2px, 0);
+  }
+  100% {
+    transform: translate(2px, 0);
+  }
 }
 
 .row {
