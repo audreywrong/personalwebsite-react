@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/personalwebsite-react/static/css/main.877d0c29.chunk.css",
-    "main.js": "/personalwebsite-react/static/js/main.45b6e81b.chunk.js",
-    "main.js.map": "/personalwebsite-react/static/js/main.45b6e81b.chunk.js.map",
+    "main.js": "/personalwebsite-react/static/js/main.f99bb2ab.chunk.js",
+    "main.js.map": "/personalwebsite-react/static/js/main.f99bb2ab.chunk.js.map",
     "runtime-main.js": "/personalwebsite-react/static/js/runtime-main.609046ae.js",
     "runtime-main.js.map": "/personalwebsite-react/static/js/runtime-main.609046ae.js.map",
-    "static/js/2.7508c1aa.chunk.js": "/personalwebsite-react/static/js/2.7508c1aa.chunk.js",
-    "static/js/2.7508c1aa.chunk.js.map": "/personalwebsite-react/static/js/2.7508c1aa.chunk.js.map",
+    "static/js/2.963eac2b.chunk.js": "/personalwebsite-react/static/js/2.963eac2b.chunk.js",
+    "static/js/2.963eac2b.chunk.js.map": "/personalwebsite-react/static/js/2.963eac2b.chunk.js.map",
     "index.html": "/personalwebsite-react/index.html",
     "static/css/main.877d0c29.chunk.css.map": "/personalwebsite-react/static/css/main.877d0c29.chunk.css.map",
-    "static/js/2.7508c1aa.chunk.js.LICENSE.txt": "/personalwebsite-react/static/js/2.7508c1aa.chunk.js.LICENSE.txt",
+    "static/js/2.963eac2b.chunk.js.LICENSE.txt": "/personalwebsite-react/static/js/2.963eac2b.chunk.js.LICENSE.txt",
     "static/media/Homepage.css": "/personalwebsite-react/static/media/farewell.0a2140b9.ttf",
     "static/media/frankenbread.f49ad202.png": "/personalwebsite-react/static/media/frankenbread.f49ad202.png",
     "static/media/headshot.f7c2ddaa.jpg": "/personalwebsite-react/static/media/headshot.f7c2ddaa.jpg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.609046ae.js",
-    "static/js/2.7508c1aa.chunk.js",
+    "static/js/2.963eac2b.chunk.js",
     "static/css/main.877d0c29.chunk.css",
-    "static/js/main.45b6e81b.chunk.js"
+    "static/js/main.f99bb2ab.chunk.js"
   ]
 }
