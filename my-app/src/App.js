@@ -10,11 +10,11 @@ function App() {
     <div className="router-wrapper">
       <BrowserRouter>
         <switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/homepage" component={Homepage} />
           <Route exact path="/baking-game" component={BakingGame} />
         </switch>
         <nav>
-          <Link className="nav-item" to="/">
+          <Link className="nav-item" to="/homepage">
             Home
           </Link>
           <Link className="nav-item">Resume</Link>
