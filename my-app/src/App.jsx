@@ -10,12 +10,12 @@ function App() {
     <div className="router-wrapper">
       <BrowserRouter>
         <switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/personalwebsite-react" component={Homepage} />
           <Route exact path="/baking-game" component={BakingGame} />
-          <Redirect to="/" />
+          <Redirect to="/personalwebsite-react" />
         </switch>
         <nav>
-          <Link className="nav-item" to="/">
+          <Link className="nav-item" to="/personalwebsite-react">
             Home
           </Link>
           <Link className="nav-item">Resume</Link>
