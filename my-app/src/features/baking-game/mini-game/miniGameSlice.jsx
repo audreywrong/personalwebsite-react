@@ -101,5 +101,10 @@ export const miniGameSlice = createSlice({
 export const selectStep = state => {
   return state.miniGame.steps[state.miniGame.currentStepNumber];
 };
+
+export const selectIsMiniGameSolved = state => {
+  return state.miniGame.steps[state.miniGame.currentStepNumber].isMiniGameSolved;
+};
+
 export const {setStepIsSolved, setCurrentStep} = miniGameSlice.actions;
 export default miniGameSlice.reducer;

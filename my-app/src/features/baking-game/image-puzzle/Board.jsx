@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import Tile from './Tile';
 import {shuffle, isSolved} from './ImagePuzzleHelpers';
 import './Board.css';
-import {setStepIsSolved} from '../mini-game/miniGameSlice';
-import {useDispatch} from 'react-redux';
+import {selectIsMiniGameSolved, setStepIsSolved} from '../mini-game/miniGameSlice';
+import {useDispatch, useSelector} from 'react-redux';
 
 function Board(props) {
+  const isPreviouslyDispatched = useSelector(selectIsMiniGameSolved);
   const [isStarted, setIsStarted] = useState(false);
   const [initialTiles] = useState(props.initialTiles);
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ function Board(props) {
   const updateAndRenderIsSolved = () => {
     const hasWon = isSolved(props.tiles);
 
-    if (isStarted && hasWon) {
-      dispatch(setStepIsSolved);
+    if (isStarted && hasWon && !isPreviouslyDispatched) {
+      dispatch(setStepIsSolved());
       return <div>Puzzle solved</div>;
     }
   };
@@ -76,7 +77,7 @@ function Board(props) {
           Start game
         </button>
       ) : (
-        <button id="board-button" onClick={() => handleResetClick()}>
+        <button id="reset-button" onClick={() => handleResetClick()}>
           Reset game
         </button>
       )}

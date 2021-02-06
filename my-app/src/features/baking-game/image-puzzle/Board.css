@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-#board-button {
+#board-button,
+#reset-button {
   display: block;
   position: relative;
   margin: 1px auto 0;

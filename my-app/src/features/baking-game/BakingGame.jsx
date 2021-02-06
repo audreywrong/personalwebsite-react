@@ -3,11 +3,10 @@ import './BakingGame.css';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
 import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 
 function BakingGame() {
   const [bakeryName, setBakeryName] = useState('');
