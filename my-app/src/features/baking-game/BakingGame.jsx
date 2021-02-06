@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 function BakingGame() {
   const [bakeryName, setBakeryName] = useState('');
@@ -32,48 +33,30 @@ function BakingGame() {
   return (
     <>
       <CheatCode {...{show: poopedOn}}></CheatCode>
-      {(() => {
-        return (
-          !poopedOn && (
-            <>
-              <div className="bakery-name-heading">
-                {(() => {
-                  return bakeryName && <h1>{bakeryName}</h1>;
-                })()}
-              </div>
+      {!poopedOn && (
+        <>
+          <div className="bakery-name-heading">{bakeryName && <h1>{bakeryName}</h1>}</div>
 
-              {(() => {
-                /* anon function returns undefined if not truthy */
-                return (
-                  currentStep.image && (
-                    <div className="image-wrapper">
-                      <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
-                    </div>
-                  )
-                );
-              })()}
+          {currentStep.image && (
+            <div className="image-wrapper">
+              <img src={currentStep.image} className={currentStep.imgClass} alt="logo" />
+            </div>
+          )}
 
-              <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
-              <SlidePuzzle {...{show: currentStep.stepNumber === 3, imgUrl: currentStep.slideImage}}></SlidePuzzle>
+          <NameForm handleBakeryNameForm={handleBakeryNameForm} show={currentStep.stepNumber === 0}></NameForm>
+          <SlidePuzzle {...{show: currentStep.stepNumber === 3, imgUrl: currentStep.slideImage}}></SlidePuzzle>
 
-              {(() => {
-                return (
-                  bakeryName &&
-                  ((currentStep.hasMiniGame && currentStep.isMiniGameSolved) || !currentStep.hasMiniGame) && (
-                    <Button onClick={handleClick} variant="contained">
-                      {currentStep.buttonText}
-                    </Button>
-                  )
-                );
-              })()}
+          {bakeryName && ((currentStep.hasMiniGame && currentStep.isMiniGameSolved) || !currentStep.hasMiniGame) && (
+            <Button onClick={handleClick} variant="contained" style={{display: 'block', margin: '.5rem auto'}}>
+              {currentStep.buttonText}
+            </Button>
+          )}
 
-              <BackButton
-                {...{bakeryName: bakeryName, currentStep: currentStep, handleClickDecrement: handleClickDecrement}}
-              ></BackButton>
-            </>
-          )
-        );
-      })()}
+          <BackButton
+            {...{bakeryName: bakeryName, currentStep: currentStep, handleClickDecrement: handleClickDecrement}}
+          ></BackButton>
+        </>
+      )}
     </>
   );
 }
