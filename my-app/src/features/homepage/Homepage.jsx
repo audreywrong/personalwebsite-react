@@ -88,6 +88,9 @@ function Homepage() {
           <span className="blast" aria-hidden="true">
             r
           </span>
+          <span className="blast" aria-hidden="true">
+            .
+          </span>
         </h1>
         <p className="tag margin-left-125">{'</h1>'}</p>
         <p className="tag margin-left-65">{'</body>'}</p>
