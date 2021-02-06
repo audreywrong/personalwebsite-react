@@ -18,11 +18,11 @@ function App() {
           <Link className="nav-item" to="/personalwebsite-react">
             Home
           </Link>
-          <Link className="nav-item">Resume</Link>
+          {/* <Link className="nav-item">Resume</Link> */}
           <Link className="nav-item" to="/baking-game">
             Baking Game
           </Link>
-          <Link className="nav-item">Contact Me</Link>
+          {/* <Link className="nav-item">Contact Me</Link> */}
         </nav>
       </BrowserRouter>
     </div>

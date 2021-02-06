@@ -24,7 +24,7 @@ button {
 }
 
 .bakery-form {
-  width: 30%;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,7 +35,7 @@ button {
   width: 35%;
   margin: 50px auto 0;
   text-align: center;
-  font-family: fantasy;
+  font-family: Farewell;
   text-transform: uppercase;
   font-size: 38px;
 }
@@ -50,4 +50,10 @@ button {
   100% {
     transform: translateY(0px);
   }
+}
+
+@font-face {
+  font-family: Farewell;
+  src: url(../../fonts/farewell.ttf);
+  font-weight: normal;
 }

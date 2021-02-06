@@ -10,8 +10,8 @@ const INITIAL_TILES = [...Array(TILE_COUNT).keys()];
 
 export const SlidePuzzle = props => {
   const [tiles, setTiles] = useState(INITIAL_TILES);
-  const _isSolvable = isSolvable;
-  const _isSolved = isSolved;
+  // const _isSolvable = isSolvable;
+  // const _isSolved = isSolved;
 
   // import {isSolvable, isSolved} from '../image-puzzle/ImagePuzzleHelpers';
 

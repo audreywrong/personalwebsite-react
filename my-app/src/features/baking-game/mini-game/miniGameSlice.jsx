@@ -2,10 +2,10 @@ import {createSlice} from '@reduxjs/toolkit';
 import breadLoadingScreen from '../../../images/bread-loading-screen.png';
 import recipe from '../../../images/recipe.png';
 import mixingBowl from '../../../images/mixing-bowl.png';
-import breadShaping from '../../../images/bread-shaping.jpg';
+import breadShaping from '../../../images/bread-shaping.png';
 import rising from '../../../images/rising.png';
 import resting from '../../../images/sleeping-bread.png';
-import baking from '../../../images/baking.jpg';
+import baking from '../../../images/baking.png';
 import freshLoaf from '../../../images/fresh-loaf.png';
 import frankenbread from '../../../images/frankenbread.png';
 

@@ -6,6 +6,7 @@ import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
 import {useSelector, useDispatch} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
+import Button from '@material-ui/core/Button';
 
 function BakingGame() {
   const [bakeryName, setBakeryName] = useState('');
@@ -59,7 +60,9 @@ function BakingGame() {
                 return (
                   bakeryName &&
                   ((currentStep.hasMiniGame && currentStep.isMiniGameSolved) || !currentStep.hasMiniGame) && (
-                    <button onClick={handleClick}>{currentStep.buttonText}</button>
+                    <Button onClick={handleClick} variant="contained">
+                      {currentStep.buttonText}
+                    </Button>
                   )
                 );
               })()}

@@ -18,13 +18,13 @@ body {
 
 @font-face {
   font-family: Farewell;
-  src: url('farewell.ttf');
+  src: url(../../fonts/farewell.ttf);
   font-weight: normal;
 }
 
 @font-face {
   font-family: FiraSans-ExtraBold;
-  src: url('FiraSans-ExtraBold.ttf');
+  src: url(../../fonts/FiraSans-ExtraBold.ttf);
 }
 
 .headshot {
