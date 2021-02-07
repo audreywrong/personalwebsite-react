@@ -8,6 +8,9 @@ function Homepage() {
       <div className="column left-column">
         <p className="tag">{'<html>'}</p>
         <p className="tag margin-left-65">{'<body>'}</p>
+        <div className="mobile-headshot-wrapper">
+          <img src={headshot} alt="Headshot" className="mobile-headshot" />
+        </div>
         <p className="tag margin-left-125">{'<h1>'}</p>
         <h1>
           <span className="blast" aria-hidden="true">
