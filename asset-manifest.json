@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/personalwebsite-react/static/css/main.ee26c163.chunk.css",
-    "main.js": "/personalwebsite-react/static/js/main.66f1454c.chunk.js",
-    "main.js.map": "/personalwebsite-react/static/js/main.66f1454c.chunk.js.map",
+    "main.css": "/personalwebsite-react/static/css/main.cfdee4c3.chunk.css",
+    "main.js": "/personalwebsite-react/static/js/main.24442181.chunk.js",
+    "main.js.map": "/personalwebsite-react/static/js/main.24442181.chunk.js.map",
     "runtime-main.js": "/personalwebsite-react/static/js/runtime-main.609046ae.js",
     "runtime-main.js.map": "/personalwebsite-react/static/js/runtime-main.609046ae.js.map",
     "static/js/2.b53678ae.chunk.js": "/personalwebsite-react/static/js/2.b53678ae.chunk.js",
     "static/js/2.b53678ae.chunk.js.map": "/personalwebsite-react/static/js/2.b53678ae.chunk.js.map",
     "index.html": "/personalwebsite-react/index.html",
-    "static/css/main.ee26c163.chunk.css.map": "/personalwebsite-react/static/css/main.ee26c163.chunk.css.map",
+    "static/css/main.cfdee4c3.chunk.css.map": "/personalwebsite-react/static/css/main.cfdee4c3.chunk.css.map",
     "static/js/2.b53678ae.chunk.js.LICENSE.txt": "/personalwebsite-react/static/js/2.b53678ae.chunk.js.LICENSE.txt",
     "static/media/Homepage.css": "/personalwebsite-react/static/media/FiraSans-ExtraBold.e5fadcd0.ttf",
     "static/media/App.css": "/personalwebsite-react/static/media/FiraSans-Regular.4c2ffb7b.ttf",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.609046ae.js",
     "static/js/2.b53678ae.chunk.js",
-    "static/css/main.ee26c163.chunk.css",
-    "static/js/main.66f1454c.chunk.js"
+    "static/css/main.cfdee4c3.chunk.css",
+    "static/js/main.24442181.chunk.js"
   ]
 }
