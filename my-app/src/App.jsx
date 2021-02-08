@@ -19,15 +19,15 @@ function App() {
             <Link className="nav-item" to="/baking-game">
               Baking Game
             </Link>
-            <Link className="social-item" to="https://github.com/audreywrong">
+            <a className="social-item" href="https://github.com/audreywrong" target="_blank">
               <FaGithub />
-            </Link>
-            <Link className="social-item" to="https://twitter.com/audwrong">
+            </a>
+            <a className="social-item" href="https://twitter.com/audwrong" target="_blank">
               <FaTwitter />
-            </Link>
-            <Link className="social-item" to="https://www.linkedin.com/in/audreylwright/">
+            </a>
+            <a className="social-item" href="https://www.linkedin.com/in/audreylwright/" target="_blank">
               <FaLinkedin />
-            </Link>
+            </a>
           </nav>
         </div>
         <Switch>
