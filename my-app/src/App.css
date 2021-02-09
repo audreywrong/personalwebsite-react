@@ -30,6 +30,6 @@
   text-decoration: none;
 }
 
-.nav-item:hover {
+#nav-bar .nav-item:hover {
   text-decoration: underline;
 }

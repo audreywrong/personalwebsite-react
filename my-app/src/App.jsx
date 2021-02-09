@@ -19,6 +19,9 @@ function App() {
             <Link className="nav-item" to="/baking-game">
               Baking Game
             </Link>
+            <a className="nav-item" href="https://audreywrong.github.io/all-about-audrey/">
+              Blog
+            </a>
             <a className="social-item" href="https://github.com/audreywrong" target="_blank">
               <FaGithub />
             </a>
