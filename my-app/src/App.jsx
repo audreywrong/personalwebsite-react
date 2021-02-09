@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Link, Redirect} from 'react-router-dom';
 import {Switch} from 'react-router';
 import Homepage from './features/homepage/Homepage';
 import BakingGame from './features/baking-game/BakingGame';
+import AboutMe from './features/about-me/AboutMe';
 import {FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
           <nav>
             <Link className="nav-item" to="/personalwebsite-react">
               Home
+            </Link>
+            <Link className="nav-item" to="/about-me">
+              About Me
             </Link>
             {/* <Link className="nav-item">Resume</Link> */}
             <Link className="nav-item" to="/baking-game">
@@ -35,6 +39,7 @@ function App() {
         </div>
         <Switch>
           <Route exact path="/personalwebsite-react" component={Homepage} />
+          <Route exact path="/about-me" component={AboutMe} />
           <Route exact path="/baking-game" component={BakingGame} />
           <Redirect to="/personalwebsite-react" />
         </Switch>
