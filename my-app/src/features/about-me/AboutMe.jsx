@@ -6,10 +6,11 @@ import Bread from './bread.jpg';
 import Concert from './concert.JPG';
 import Hiking from './hiking.JPG';
 import GamerGirl from './skulllogo.png';
+import HobbyItem from './HobbyItem';
 
 const AboutMe = () => (
   <div className="grid-wrapper">
-    <Grid container justify="center" spacing={1}>
+    <Grid container spacing={1} justify="center">
       <Grid item xs={10} sm={6}>
         <Paper>
           <h1>Professional Summary</h1>
@@ -59,26 +60,12 @@ const AboutMe = () => (
           </ul>
         </Paper>
       </Grid>
-      <Grid item xs={12} sm={6} className="hobby">
-        <Paper>
-          <img src={Bread} alt="Bread" className="hobby-image" />
-        </Paper>
-      </Grid>
-      <Grid item xs={12} sm={6} className="hobby">
-        <Paper>
-          <img src={GamerGirl} alt="Gamer girl logo" className="hobby-image" />
-        </Paper>
-      </Grid>
-      <Grid item xs={12} sm={6} className="hobby">
-        <Paper>
-          <img src={Hiking} alt="Hiking" className="hobby-image" />
-        </Paper>
-      </Grid>
-      <Grid item xs={12} sm={6} className="hobby">
-        <Paper>
-          <img src={Concert} alt="Concert" className="hobby-image" />
-        </Paper>
-      </Grid>
+      <HobbyItem {...{imgSource: Bread, imgAltText: 'Bread', hobbyText: 'This is some info about my hobby.'}} />
+      <HobbyItem {...{imgSource: Hiking, imgAltText: 'Hiking', hobbyText: 'This is some info about my hobby.'}} />
+      <HobbyItem
+        {...{imgSource: GamerGirl, imgAltText: 'Gamer Girl Logo', hobbyText: 'This is some info about my hobby.'}}
+      />
+      <HobbyItem {...{imgSource: Concert, imgAltText: 'Concert', hobbyText: 'This is some info about my hobby.'}} />
     </Grid>
   </div>
 );
