@@ -9,7 +9,7 @@ import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 import Button from '@material-ui/core/Button';
 
 function BakingGame() {
-  const [bakeryName, setBakeryName] = useState('');
+  const [bakeryName, setBakeryName] = useState('Baking Game');
   const poopedOn = useSelector(selectPoopedOn);
   const currentStep = useSelector(selectStep);
   const dispatch = useDispatch();
