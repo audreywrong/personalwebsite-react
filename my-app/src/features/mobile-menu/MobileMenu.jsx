@@ -40,10 +40,10 @@ export default function MobileMenu() {
       linkHref: 'https://audreywrong.github.io/all-about-audrey/',
     },
     {linkContent: 'Baking Game', hasLink: true, linkHref: '/baking-game'},
-    {linkContent: <FaGithub />, hasLink: false, linkHref: 'https://github.com/audreywrong'},
-    {linkContent: <FaTwitter />, hasLink: false, linkHref: 'https://twitter.com/audwrong'},
+    {linkContent: <FaGithub style={{margin: 'auto'}} />, hasLink: false, linkHref: 'https://github.com/audreywrong'},
+    {linkContent: <FaTwitter style={{margin: 'auto'}} />, hasLink: false, linkHref: 'https://twitter.com/audwrong'},
     {
-      linkContent: <FaLinkedin />,
+      linkContent: <FaLinkedin style={{margin: 'auto'}} />,
       hasLink: false,
 
       linkHref: 'https://www.linkedin.com/in/audreylwright/',
@@ -56,17 +56,17 @@ export default function MobileMenu() {
         {navArray.map(({linkContent, isLink, linkHref}) => {
           const hasSocial = typeof linkContent !== 'string';
           const listContent = hasSocial ? (
-            <ListItemIcon>{linkContent}</ListItemIcon>
+            <ListItemIcon style={{margin: 'auto'}}>{linkContent}</ListItemIcon>
           ) : (
             <ListItemText>{linkContent}</ListItemText>
           );
 
           return (
-            <ListItemText button key={linkContent}>
+            <ListItemText button style={{padding: '1rem'}} key={linkContent}>
               {isLink ? (
                 <Link to={linkHref}>{listContent}</Link>
               ) : (
-                <a href={linkHref} target="_blank">
+                <a href={linkHref} style={{display: 'flex', margin: 'auto'}} target="_blank">
                   {listContent}
                 </a>
               )}
