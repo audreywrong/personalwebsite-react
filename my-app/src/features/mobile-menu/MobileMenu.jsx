@@ -31,15 +31,15 @@ export default function MobileMenu() {
   };
 
   const navArray = [
-    {linkContent: 'Home', hasLink: true, linkHref: '/personalwebsite-react'},
-    {linkContent: 'About Me', hasLink: true, linkHref: '/about-me'},
+    {linkContent: 'Home', hasLink: true, linkHref: '/Homepage'},
+    {linkContent: 'About Me', hasLink: true, linkHref: '/AboutMe'},
     {
       linkContent: 'Blog',
       hasLink: false,
 
       linkHref: 'https://audreywrong.github.io/all-about-audrey/',
     },
-    {linkContent: 'Baking Game', hasLink: true, linkHref: '/baking-game'},
+    {linkContent: 'Baking Game', hasLink: true, linkHref: '/BakingGame'},
     {linkContent: <FaGithub style={{margin: 'auto'}} />, hasLink: false, linkHref: 'https://github.com/audreywrong'},
     {linkContent: <FaTwitter style={{margin: 'auto'}} />, hasLink: false, linkHref: 'https://twitter.com/audwrong'},
     {
