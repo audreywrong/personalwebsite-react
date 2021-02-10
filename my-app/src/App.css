@@ -1,6 +1,29 @@
 @font-face {
   font-family: FiraSans-Regular;
-  src: url(../src/fonts/FiraSans-Regular.ttf);
+  src: url(./fonts/FiraSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Farewell;
+  src: url(./fonts/farewell.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: FiraSans-ExtraBold;
+  src: url(./fonts/FiraSans-ExtraBold.ttf);
+}
+
+body {
+  background-color: rgba(245, 232, 196, 0.5);
+}
+
+p {
+  font-family: FiraSans-Regular;
+}
+
+h1 {
+  font-family: FiraSans-ExtraBold;
 }
 
 #nav-bar {
