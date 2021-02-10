@@ -52,13 +52,13 @@ export default function MobileMenu() {
   );
 
   return (
-    <div>
+    <div style={{margin: '0 auto 0 0.5rem'}}>
       <Button
         onClick={toggleDrawer(true)}
-        style={{backgroundColor: 'white', border: '2px solid black', padding: '2px 8px'}}
+        style={{backgroundColor: 'white', border: '2px solid black', padding: 0}}
         className="mobile-menu"
       >
-        <GiHamburger />
+        <GiHamburger style={{height: '1.5rem', width: '1.5rem'}} />
       </Button>
       )
       {/* {['Home', 'About Me', 'Baking Game', 'bottom'].map(anchor => (
