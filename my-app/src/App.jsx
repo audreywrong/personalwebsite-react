@@ -24,12 +24,12 @@ function App() {
               <Link className="nav-item" to="/about-me">
                 About Me
               </Link>
-              <Link className="nav-item" to="/baking-game">
-                Baking Game
-              </Link>
               <a className="nav-item" href="https://audreywrong.github.io/all-about-audrey/" target="_blank">
                 Blog
               </a>
+              <Link className="nav-item" to="/baking-game">
+                Baking Game
+              </Link>
               <a className="social-item" href="https://github.com/audreywrong" target="_blank">
                 <FaGithub />
               </a>
