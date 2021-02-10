@@ -1,18 +1,19 @@
 .floating-image {
   animation: Image-float infinite 3s ease-in-out;
   display: block;
-  margin: 50px auto 0;
+  margin: auto;
   max-width: 20%;
 }
 
 .image-wrapper {
   height: 35vh;
   margin: 50px 0;
+  display: flex;
 }
 
 .still-image {
   display: block;
-  margin: 50px auto 0;
+  margin: auto;
   height: 100%;
 }
 
@@ -55,14 +56,13 @@ Button {
   .floating-image {
     animation: Image-float infinite 3s ease-in-out;
     display: block;
-    margin: 50px auto 0;
+    margin: auto;
     max-width: 50%;
   }
 
   .still-image {
     display: block;
-    margin: 50px auto 0;
-    /* height: 100%; */
+    margin: auto;
     max-width: 100%;
   }
 }
