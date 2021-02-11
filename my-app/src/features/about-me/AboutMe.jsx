@@ -18,22 +18,24 @@ const AboutMe = () => (
           <Box m={2} p={2}>
             <h1>Professional Summary</h1>
             <p>
-              Software Engineer with a proven ability to adapt to a changing, collaborative environment and deliver
-              detail-oriented results.
+              <p>
+                Software Engineer with a proven ability to adapt to a changing, collaborative environment and deliver
+                detail-oriented results.
+              </p>
+              <p>
+                Discovering that I possess a passion for technology (that extended beyond my love of video games and
+                computers since before I could fully speak) has pushed me to pursue software.
+              </p>
               <p>
                 Before transitioning to coding, I came from a fast-paced entrepreneurial and sales-focused career where
                 I always found ways to integrate efficient, high-performing technology into my day-to-day work
-                environment. This included CRM's like Insightly, social media marketing, ad campaigns and e-mail
-                campaigns.{' '}
-              </p>
-              <p>
-                Discovering that I possess a passion for the technology itself (that extended beyond my love of video
-                games and computers since before I could fully speak) has pushed me to pursue software engineering and
-                develop my skills as a Front End Developer with further aspirations that I continue to work towards.
+                environment. I developed, controlled budget for, and executed an online multi-channel marketing strategy
+                that included social media, email, and other online ad campaigns. Technologies used include Insightly
+                and other CRM platforms.
               </p>
               <p>
                 I believe that you are never an "expert" and that there is ALWAYS something more to learn! Collaborate,
-                ask questions and never fear trying. I'm excited and passionate about building fully responsive web
+                ask questions, and never fear trying. I'm excited and passionate about building fully responsive web
                 applications that help solve complex problems!
               </p>
             </p>
@@ -48,8 +50,7 @@ const AboutMe = () => (
               <li>Languages: HTML5, CSS3, JavaScript (ES6), EcmaScript</li>
               <li>Frameworks: Node.js, Create React APP, Gatsby</li>
               <li>Libraries: React, Redux, Material-UI</li>
-              <li>CI/CD: GIT, GitHub Pages</li>
-              <li>Tools: GitHub, VS Code</li>
+              <li>Tools: Git, GitHub Pages, GitHub, VS Code</li>
             </ul>{' '}
           </Box>
         </Paper>
@@ -74,7 +75,7 @@ const AboutMe = () => (
           imgSource: Bread,
           imgAltText: 'Bread',
           hobbyText:
-            "I have loved baking since I can remember, and I still have the 'Betty Crocker's Boys and Girls Cook Book' that was given to me when I was 10. My most recent baking interest has been with sourdough bread! I also enjoy making cookies and other breads. In 2020 I had the opportunity to participate in the Bakers Against Racism nationwise bake sale to raise money for a local organization helping in the fight against racism. Baking is a mix of science and art and I love being able to gift what I make to others. #bodybybread",
+            "Ever since I can remember, I have loved baking. I still have the 'Betty Crocker's Boys and Girls Cook Book' that was given to me when I was 10. My most recent baking interest has been with sourdough bread! I also enjoy making cookies and other breads. In 2020, I had the opportunity to participate in the Bakers Against Racism nationwide bake sale to raise money for a local organization helping in the fight against racism. Baking is a mix of science and art that creates something I love being able to gift to others. #bodybybread",
         }}
       />
       <HobbyItem
@@ -82,7 +83,7 @@ const AboutMe = () => (
           imgSource: Hiking,
           imgAltText: 'Hiking',
           hobbyText:
-            "Hiking has allowed me to see some of the most incredible sights. The physical and mental work you put in to reach the reward of the view at the end is a feeling I can't get over. From craters to forest trails I've been fortunate enough to see some incredible things. One of my most favorite hikes is Glymur Waterfall in Iceland (pictured here). It was a spontaneous hike that was hard to find, but was an experience I don't know if I can ever replicate.",
+            "Hiking has allowed me to see some of the most incredible sights. The physical and mental work you put in to reach the reward of the view at the end is a feeling I can't get over. From craters to forest trails, I've been fortunate enough to see some incredible things. One of my most favorite hikes is Glymur Waterfall in Iceland (pictured here). It was a spontaneous hike that was hard to find, and it was also an experience that may never be replicated.",
         }}
       />
       <HobbyItem
@@ -90,7 +91,7 @@ const AboutMe = () => (
           imgSource: GamerGirl,
           imgAltText: 'Gamer Girl Logo',
           hobbyText:
-            "GamerGirl is a brand and business concept I developed in a High School Capstone course. It is 'Gamer Girl is an innovative, inclusive, creative and edgy gaming accessory company for the female gaming community of today, or Gamer Girls!' I sketched designs for prototypes, learned how to write a formal business plan and even made some of the prototypes! Who knows?! Maybe it'll make a comeback in the future!",
+            'GamerGirl is a brand I developed in high school and it continues to live as a side hustle/passion project. Gamer Girl is an innovative, inclusive, creative and edgy social movement for the female gaming community of today: The Gamer Girls! I sketched designs for prototypes, learned how to write a formal business plan and even made some of the prototypes! I continue to pursue this as a side passion and hope to one day leverage this concept to make a real social impact.',
         }}
       />
       <HobbyItem
@@ -98,7 +99,7 @@ const AboutMe = () => (
           imgSource: Concert,
           imgAltText: 'Concert',
           hobbyText:
-            'From singing The Beatles with my dad in the living room to going to as many concerts as I can with my sister; music is as much a part of me as the hair on my head. I will listen to just about anything, but truly love rock and metal, classical and dance music. Going to live shows with friends and family is one of my favorite things in the world!',
+            'From singing The Beatles with my dad in the living room to going to as many concerts as I can with my sister, music is as much a part of me as my legs and lungs are. I will listen to just about anything, but I truly love rock and metal, classical and dance music. Going to live shows with friends and family is one of my favorite things in the world!',
         }}
       />
     </Grid>
