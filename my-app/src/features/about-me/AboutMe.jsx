@@ -50,7 +50,7 @@ const AboutMe = () => (
               <li>Languages: HTML5, CSS3, JavaScript (ES6), EcmaScript</li>
               <li>Frameworks: Node.js, Create React APP, Gatsby</li>
               <li>Libraries: React, Redux, Material-UI</li>
-              <li>Tools: Git, GitHub Pages, GitHub, VS Code</li>
+              <li>Tools: Git, GitHub Pages, GitHub, VS Code, Chrome Dev Tools</li>
             </ul>{' '}
           </Box>
         </Paper>
