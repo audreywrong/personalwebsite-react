@@ -1,4 +1,7 @@
 import {React, useState, Component} from 'react';
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+
 import './BakingGame.css';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
@@ -6,7 +9,6 @@ import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
-import Button from '@material-ui/core/Button';
 
 function BakingGame() {
   const [bakeryName, setBakeryName] = useState('Baking Game');
@@ -90,11 +92,16 @@ class NameForm extends Component {
             Enter bakery name here:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />{' '}
+          <input type="submit" value="Submit" />
         </div>
       </form>
     );
   }
 }
+
+NameForm.propTypes = {
+  show: PropTypes.bool,
+  handleBakeryNameForm: PropTypes.func,
+};
 
 export default BakingGame;

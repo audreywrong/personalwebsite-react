@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -21,5 +22,11 @@ const HobbyItem = props => (
     </Paper>
   </Grid>
 );
+
+HobbyItem.propTypes = {
+  imgSource: PropTypes.string.isRequired,
+  imgAltText: PropTypes.string.isRequired,
+  hobbyText: PropTypes.string.isRequired,
+};
 
 export default HobbyItem;
