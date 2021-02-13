@@ -86,7 +86,7 @@ export default function MobileMenu() {
       >
         <GiHamburger style={{height: '1.5rem', width: '1.5rem'}} />
       </Button>
-      <SwipeableDrawer open={state.isOpen} onClose={toggleDrawer(false)}>
+      <SwipeableDrawer open={state.isOpen} onOpen={toggleDrawer(true)} onClose={toggleDrawer(false)}>
         <MobileNavList />
       </SwipeableDrawer>
     </div>
