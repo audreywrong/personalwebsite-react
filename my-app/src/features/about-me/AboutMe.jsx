@@ -60,6 +60,7 @@ const AboutMe = () => (
           <Box m={2} p={2}>
             <h1>Additional</h1>
             <ul>
+              <li>Test-Driven Development</li>
               <li>Google Analytics</li>
               <li>Web and Social Media Analytics</li>
               <li>Ad Spend</li>
