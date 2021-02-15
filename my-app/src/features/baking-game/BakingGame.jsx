@@ -5,14 +5,14 @@ import Button from '@material-ui/core/Button';
 import './BakingGame.css';
 import BackButton from './back-button/BackButton';
 import CheatCode from './cheat-code/CheatCode';
-import {selectPoopedOn} from './cheat-code/cheatCodeSlice';
+import {selectEmojiPic} from './cheat-code/cheatCodeSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import {SlidePuzzle} from './slide-puzzle/SlidePuzzle';
 import {selectStep, setCurrentStep} from './mini-game/miniGameSlice';
 
 function BakingGame() {
   const [bakeryName, setBakeryName] = useState('Baking Game');
-  const poopedOn = useSelector(selectPoopedOn);
+  const cheatCodeOn = useSelector(selectEmojiPic);
   const currentStep = useSelector(selectStep);
   const dispatch = useDispatch();
   function handleBakeryNameForm(newBakeryName) {
@@ -33,8 +33,8 @@ function BakingGame() {
 
   return (
     <>
-      <CheatCode {...{show: poopedOn}}></CheatCode>
-      {!poopedOn && (
+      <CheatCode {...{show: cheatCodeOn}}></CheatCode>
+      {!cheatCodeOn && (
         <>
           <div className="bakery-name-heading">{bakeryName && <h1>{bakeryName}</h1>}</div>
 

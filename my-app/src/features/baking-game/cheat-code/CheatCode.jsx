@@ -1,9 +1,9 @@
-import poop from '../../../images/poop.png';
+import emoji from '../../../images/emoji.png';
 import {useDispatch} from 'react-redux';
-import {poopImage} from './cheatCodeSlice';
+import {emojiImage} from './cheatCodeSlice';
 import useEventListener from '@use-it/event-listener';
 
-const poopCode = [
+const emojiCode = [
   'ArrowUp',
   'ArrowUp',
   'ArrowDown',
@@ -16,31 +16,31 @@ const poopCode = [
   'a',
 ];
 
-let poopCodePosition = 0;
+let emojiCodePosition = 0;
 
 const CheatCode = props => {
   const dispatch = useDispatch();
 
   const handleKeyDown = keyPressEvent => {
     const key = keyPressEvent.key;
-    const requiredKey = poopCode[poopCodePosition];
+    const requiredKey = emojiCode[emojiCodePosition];
 
     if (key === requiredKey) {
-      poopCodePosition++;
+      emojiCodePosition++;
 
-      if (poopCodePosition === poopCode.length) {
-        dispatch(poopImage());
-        poopCodePosition = 0;
+      if (emojiCodePosition === emojiCode.length) {
+        dispatch(emojiImage());
+        emojiCodePosition = 0;
       }
     } else {
-      poopCodePosition = 0;
+      emojiCodePosition = 0;
     }
   };
 
   useEventListener('keydown', handleKeyDown);
 
   if (!props.show) return <></>;
-  return <img alt="poop" className="poop-image" src={poop} />;
+  return <img alt="emoji" className="emoji-image" src={emoji} />;
 };
 
 export default CheatCode;
