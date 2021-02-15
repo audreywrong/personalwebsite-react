@@ -40,7 +40,7 @@ const CheatCode = props => {
   useEventListener('keydown', handleKeyDown);
 
   if (!props.show) return <></>;
-  return <img alt="emoji" className="emoji-image" src={emoji} />;
+  return <img alt="emoji" className="emoji-image" src={emoji} style={{margin: '0 38%'}} />;
 };
 
 export default CheatCode;
