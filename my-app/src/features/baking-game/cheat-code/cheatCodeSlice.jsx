@@ -6,14 +6,14 @@ export const cheatCodeSlice = createSlice({
     value: false,
   },
   reducers: {
-    poopImage: state => {
+    emojiImage: state => {
       state.value = true;
     },
   },
 });
 
-export const selectPoopedOn = state => {
+export const selectEmojiPic = state => {
   return state.cheatCode.value;
 };
-export const {poopImage} = cheatCodeSlice.actions;
+export const {emojiImage} = cheatCodeSlice.actions;
 export default cheatCodeSlice.reducer;
