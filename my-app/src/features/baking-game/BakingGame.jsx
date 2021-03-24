@@ -15,6 +15,7 @@ function BakingGame() {
   const cheatCodeOn = useSelector(selectEmojiPic);
   const currentStep = useSelector(selectStep);
   const dispatch = useDispatch();
+  
   function handleBakeryNameForm(newBakeryName) {
     setBakeryName(newBakeryName);
   }
